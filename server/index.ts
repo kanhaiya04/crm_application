@@ -33,6 +33,7 @@ app.use(
     cookie: {
       secure: false,
       maxAge: 7 * 24 * 60 * 60 * 1000,
+      sameSite: "none",
     },
   })
 );
