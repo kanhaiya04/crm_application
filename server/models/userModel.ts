@@ -1,17 +1,15 @@
 import mongoose, { Document, Model, Schema } from "mongoose";
 
 export interface UserDocument extends Document {
-  googleId: string;
+  githubId: string;
   displayName: string;
-  firstName: string;
-  lastName: string;
-  image: string;
+  userName: string;
 }
 
 export interface UserModel extends Model<UserDocument> {}
 
 const userSchema = new Schema<UserDocument>({
-  googleId: {
+  githubId: {
     type: String,
     required: true,
   },
@@ -19,15 +17,7 @@ const userSchema = new Schema<UserDocument>({
     type: String,
     required: true,
   },
-  firstName: {
-    type: String,
-    required: true,
-  },
-  lastName: {
-    type: String,
-    required: true,
-  },
-  image: {
+  userName: {
     type: String,
   },
 });

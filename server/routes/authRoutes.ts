@@ -21,6 +21,19 @@ router.get(
   }
 );
 
+router.get(
+  "/github",
+  passport.authenticate("github", { scope: ["user:email"] })
+);
+
+router.get(
+  "/github/callback",
+  passport.authenticate("github", { failureRedirect: "/" }),
+  (req, res) => {
+    res.redirect(url ? url : "http://localhost:3000");
+  }
+);
+
 router.get("/verify-session", (req, res) => {
   if (req.isAuthenticated()) {
     res.status(200).json({ authenticated: true });
