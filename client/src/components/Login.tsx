@@ -1,6 +1,6 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import GoogleButton from "react-google-button";
+import {  Col, Container, Row } from "react-bootstrap";
+import { GithubLoginButton } from "react-social-login-buttons";
 
 const Login = () => {
   return (
@@ -14,9 +14,8 @@ const Login = () => {
           </Col>
           <Col className=" text-center">
             <img src="./crm.png" alt="" width={"700rem"} height={"500rem"} />
-            <GoogleButton
-              style={{ margin: "auto" }}
-              type="dark" // can be light or dark
+            <GithubLoginButton
+              style={{ margin: "auto",width:"40%" }}
               onClick={() => {
                 window.location.href = `${process.env.REACT_APP_API_URL}/auth/github`;
               }}
